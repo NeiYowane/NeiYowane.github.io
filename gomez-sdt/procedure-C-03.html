@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="shortcut icon" href="images/favicon.png" type="image/png">-->
+
+  <title>Sistema de Digitalización de Trámites</title>
+  <link rel="icon" type="image/x-icon" href="media\logo\transparent-gp.ico">
+
+  <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="lib/weather-icons/css/weather-icons.css">
+  <link rel="stylesheet" href="lib/jquery-toggles/toggles-full.css">
+
+  <link rel="stylesheet" href="css/quirk.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <script src="lib/modernizr/modernizr.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.js"></script>
+  <script src="lib/respond/respond.src.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <header>
+    <div class="headerpanel">
+
+      <div class="logopanel">
+        <a href="index.html"><img class="navbar-logo" src="media\logo\logo-GP2225-removebg.png" alt="" /></a>
+        <h2></h2>
+      </div><!-- logopanel -->
+
+      <div class="headerbar">
+
+        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+
+        <div class="searchpanel">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar Trámite...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+            </span>
+          </div><!-- input-group -->
+          <span style="line-height: 50px;">Martes 7 de Febrero del 2023, 10:00am </span>
+        </div>
+
+        <div class="header-right">
+          <ul class="headermenu">
+            <li>
+              <div class="btn-group">
+                <a href="signup.html"><button type="button" class="btn btn-logged">Registrarse &nbsp; /</button></a>
+              </div>
+            </li>
+            <li>
+              <div class="btn-group">
+                <a href="signin.html"><button type="button" class="btn btn-logged">Iniciar Sesión</button></a>
+              </div>
+            </li>
+            <li>
+              <div class="btn-group">
+                <button type="button" class="btn btn-logged" data-toggle="dropdown">
+                  <img src="media\users\default.jpg" alt="" />
+                  Usuario
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a href="profile.html"><i class="glyphicon glyphicon-user"></i> Mi Perfil</a></li>
+                  <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Ajustes</a></li>
+                  <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Ayuda</a></li>
+                  <li><a href="signin.html"><i class="glyphicon glyphicon-log-out"></i> Cerrar Sesión</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button id="chatview" class="btn btn-chat">
+                <span class="badge-alert"></span>
+                <a href="signin.html"><i class="fa fa-sign-out"></i></a>
+              </button>
+            </li>
+          </ul>
+        </div><!-- header-right -->
+      </div><!-- headerbar -->
+    </div><!-- header-->
+  </header>
+
+  <section>
+
+    <div class="leftpanel">
+      <div class="leftpanelinner">
+
+        <!-- ################## LEFT PANEL PROFILE ################## -->
+
+        <div class="leftpanel-userinfo collapse" id="loguserinfo">
+          <h5 class="sidebar-title">Dirección</h5>
+          <address>
+            4975 Cambridge Road
+            Miami Gardens, FL 33056
+          </address>
+          <h5 class="sidebar-title">Contacto</h5>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <label class="pull-left">E-mail</label>
+              <span class="pull-right">me@themepixels.com</span>
+            </li>
+            <li class="list-group-item">
+              <label class="pull-left">Tél. Casa</label>
+              <span class="pull-right">(032) 1234 567</span>
+            </li>
+            <li class="list-group-item">
+              <label class="pull-left">Tél. Móvil</label>
+              <span class="pull-right">+63012 3456 789</span>
+            </li>
+            <li class="list-group-item">
+              <label class="pull-left">Redes Sociales</label>
+              <div class="social-icons pull-right">
+                <a href="#"><i class="fa fa-facebook-official"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div><!-- leftpanel-userinfo -->
+
+        <ul class="nav nav-tabs nav-justified nav-sidebar">
+          <li class="tooltips active" data-toggle="tooltip" title="Trámites"><a data-toggle="tab"
+              data-target="#mainmenu"><i class="tooltips fa fa-ellipsis-h"></i></a></li>
+          <li class="tooltips" data-toggle="tooltip" title="Ajustes"><a data-toggle="tab" data-target="#settings"><i
+                class="fa fa-cog"></i></a></li>
+          <li class="tooltips" data-toggle="tooltip" title="Cerrar Sesión"><a href="signin.html"><i
+                class="fa fa-sign-out"></i></a></li>
+        </ul>
+
+        <div class="tab-content">
+
+          <!-- ################# MAIN MENU ################### -->
+
+          <div class="tab-pane active" id="mainmenu">
+            <h5 class="sidebar-title">Trámites</h5>
+            <ul class="nav nav-pills nav-stacked nav-quirk">
+              <li class="nav-parent">
+                <a href=""><i class="fa fa-gears"></i> <span>Licencia de Funcionamiento (FUAE)</span></a>
+                <ul class="children">
+                  <li><a href="procedure-A-01.html">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                      Bajo Riesgo</a>
+                  </li>
+                  <li><a href="procedure-A-02.html">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                      Mediano Riesgo</a>
+                  </li>
+                  <li><a href="procedure-A-03.html">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                      Regulación
+                      Especial</a></li>
+                  <li><a href="procedure-A-04.html">Licencia de Funcionamiento para Apertura Bajo Riesgo</a></li>
+                  <li><a href="procedure-A-05.html">Licencia de Funcionamiento para Apertura Mediano Riesgo</a></li>
+                  <li><a href="procedure-A-06.html">Licencia de Funcionamiento para Apertura Regulación Especial</a>
+                  </li>
+                  <li><a href="procedure-A-07.html">Refrendo Anual de la Licencia de Funcionamiento de Empresas de Bajo
+                      Riesgo</a></li>
+                  <li><a href="procedure-A-08.html">Refrendo Anual de la Licencia de Funcionamiento de Empresas de
+                      Mediano Riesgo</a></li>
+                  <li><a href="procedure-A-09.html">Refrendo Anual de la Licencia de Funcionamiento de Empresas de
+                      Regulación Especial</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-building"></i> <span>Obras Públicas y Desarrollo Urbano
+                    (FUVU)</span></a>
+                <ul class="children">
+                  <li><a href="procedure-B-01.html">Constancia de Compatibilidad Urbanistica para Construcción
+                      Habitacional</a></li>
+                  <li><a href="procedure-B-02.html">Constancia de Compatibilidad Urbanistica para Construcción
+                      Comercial</a></li>
+                  <li><a href="procedure-B-03.html">Constancia de Compatibilidad Urbanistica para Construcción
+                      Industrial</a></li>
+                  <li><a href="procedure-B-04.html">Autorización de Subdivisión de Inmueble con Superficie de hasta
+                      10,000 Metros
+                      Cuadrados</a></li>
+                  <li><a href="procedure-B-05.html">Autorización de Fusión de Inmueble con Superficie de hasta 10,000
+                      Metros Cuadrados</a>
+                  </li>
+                  <li><a href="procedure-B-06.html">Autorización de Subdivisión de Inmueble con Superficie Mayor a
+                      10,000 Metros
+                      Cuadrados</a></li>
+                  <li><a href="procedure-B-07.html">Autorización de Fusión de Inmueble con Superficie Mayor a 10,000
+                      Metros Cuadrados</a>
+                  </li>
+                  <li><a href="procedure-B-08.html">Licencia para el Uso Temporal de la Vía y Espacios Públicos para
+                      Materiales,
+                      Instalaciones y Equipos de Construcción</a></li>
+                  <li><a href="procedure-B-09.html">Licencia de Demolición Menor a 40m2</a></li>
+                  <li><a href="procedure-B-10.html">Licencia de Demolición Mayor a 40 m2</a></li>
+                  <li><a href="procedure-B-11.html">Autorización de Relotificación</a></li>
+                  <li><a href="procedure-B-12.html">Autorización de Régimen de Propiedad en Condominio</a></li>
+                  <li><a href="procedure-B-13.html">Licencia para la Instalación de Anuncio Publicitario o de
+                      Identificación</a></li>
+                  <li><a href="procedure-B-14.html">Reglamento de Construcción</a></li>
+                  <li><a href="procedure-B-15.html">Autorización de Dictamen Estructural/a></li>
+                  <li><a href="procedure-B-16.html">Licencia de Construcción para Edificación o Ampliación de Vivienda
+                      por
+                      Autoconstrucción hasta por 40 m2</a></li>
+                  <li><a href="procedure-B-17.html">Licencia para la Construcción en Inmueble mayor de 40 metros
+                      cuadrados para vivienda
+                      autoconstrucción</a></li>
+                  <li><a href="procedure-B-18.html">Licencia para la Construcción en Inmueble mayor de 40 metros
+                      cuadrados para 2 o más
+                      viviendas</a></li>
+                  <li><a href="procedure-B-19.html">Licencia para la Construcción en Inmueble mayor de 40 metros
+                      cuadrados para uso
+                      comercial, industrial y servicios</a></li>
+                  <li><a href="procedure-B-20.html">Licencia para Introducción de Líneas Conductoras</a></li>
+                  <li><a href="procedure-B-21.html">Autorización de Cambio de Uso de Suelo</a></li>
+                  <li><a href="procedure-B-22.html">Constancia de Habitabilidad</a></li>
+                  <li><a href="procedure-B-23.html">Constancia de Terminación de Obra</a></li>
+                  <li><a href="procedure-B-24.html">Certificación de Cabildo</a></li>
+                  <li><a href="procedure-B-25.html">Constancia de Factibilidad de Servicios</a></li>
+                  <li><a href="procedure-B-26.html">Remodelación Menor de 40 m2</a></li>
+                  <li><a href="procedure-B-27.html">Remodelación Mayor de 40 m2</a></li>
+                  <li><a href="procedure-B-28.html">Deslindes</a></li>
+                  <li><a href="procedure-B-29.html">Plano General de la Ciudad</a></li>
+                  <li><a href="procedure-B-30.html">Carta Urbana</a></li>
+                  <li><a href="procedure-B-31.html">Autorización de Fraccionamiento</a></li>
+                  <li><a href="procedure-B-32.html">Licencia Anual de Fraccionamiento</a></li>
+                  <li><a href="procedure-B-33.html">Recepción de Fraccionamiento</a></li>
+                  <li><a href="procedure-B-34.html">Instalación de Antenas y Similares</a></li>
+                  <li><a href="procedure-B-35.html">Renovación de licencia de construccion para Edificación o Ampliación
+                      de Vivienda por
+                      Autoconstrucción hasta por 40 m2</a></li>
+                  <li><a href="procedure-B-36.html">Renovación de Licencia para la Construcción en Inmueble mayor de 40
+                      metros
+                      cuadrados.</a></li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-user"></i> <span>Perito Responsable de Obra
+                    (DRO)</span></a>
+                <ul class="children">
+                  <li><a href="procedure-C-01.html">Registro de Perito Responsable de Obra</a></li>
+                  <li><a href="procedure-C-02.html">Cuota Anual de Perito Responsable de Obra</a></li>
+                  <li><a href="procedure-C-03.html">Cambio de Perito Responsable de Obra</a></li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-shield"></i> <span>Protección Civil</span></a>
+                <ul class="children">
+                  <li><a href="procedure-D-01.html">Dictamen de Protección Civil</a></li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-tree"></i> <span>Ecología Municipal</span></a>
+                <ul class="children">
+                  <li><a href="procedure-E-01.html">Dictamen de Ecología Municipal Bajo Riesgo</a></li>
+                  <li><a href="procedure-E-02.html">Dictamen de Ecología Municipal Mediano Riesgo</a></li>
+                  <li><a href="procedure-E-03.html">Dictamen de Ecología Municipal Regulación Especial</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- tab-pane -->
+
+          <!-- #################### SETTINGS ################### -->
+
+          <div class="tab-pane" id="settings">
+            <h5 class="sidebar-title">Ajustes Generales</h5>
+            <ul class="list-group list-group-settings">
+              <li class="list-group-item">
+                <h5>Ajuste I</h5>
+                <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean odio urna, maximus et luctus
+                  vitae, mattis pellentesque dui.</small>
+                <div class="toggle-wrapper">
+                  <div class="leftpanel-toggle toggle-light success"></div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <h5>Ajuste II</h5>
+                <small>In bibendum enim nec nulla hendrerit, sed efficitur odio vulputate. Nulla turpis turpis,
+                  hendrerit dapibus leo quis.</small>
+                <div class="toggle-wrapper">
+                  <div class="leftpanel-toggle-off toggle-light success"></div>
+                </div>
+              </li>
+            </ul>
+          </div><!-- tab-pane -->
+
+
+        </div><!-- tab-content -->
+
+      </div><!-- leftpanelinner -->
+    </div><!-- leftpanel -->
+
+    <div class="mainpanel">
+
+      <div class="contentpanel">
+
+        <ol class="breadcrumb breadcrumb-quirk">
+          <li><a href="index.html"><i class="fa fa-home mr5"></i> Inicio</a></li>
+          <li><a href="#">Trámite</a></li>
+          <!-- <li class="active">Blank</li> -->
+        </ol>
+
+        <!-- content goes here... -->
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">Ficha del Trámite</h4>
+                <p>Cambio de Perito Responsable de Obra</p>
+              </div><!-- panel-heading -->
+              <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                <a href="online-procedure.html" class="btn btn-primary btn-quirk">
+                  <i class="fa fa-desktop"></i>&nbsp;&nbsp;Iniciar Trámite en Línea
+                </a>
+                <button class="btn btn-success btn-right btn-quirk">
+                  <i class="fa fa-download"></i>&nbsp;&nbsp;Descargar Formato
+                </button>
+              </div>
+            </div><!-- panel -->
+
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">¿En qué casos debe presentarse?</h4>
+                <p>N/A</p>
+              </div><!-- panel-heading -->
+              <div class="panel-body">
+              </div>
+            </div><!-- panel -->
+
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">¿A quien aplica?</h4>
+                <p>N/A</p>
+              </div><!-- panel-heading -->
+              <div class="panel-body">
+              </div>
+            </div><!-- panel -->
+
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">¿Cual es el Procedimiento?</h4>
+                <p>N/A</p>
+              </div><!-- panel-heading -->
+              <div class="panel-body">
+              </div>
+            </div><!-- panel -->
+
+          </div><!-- col-md-6 -->
+
+          <div class="col-md-6">
+
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">Documentos Requeridos</h4>
+                <p>Esta es la lista de documentos requeridos para presentar este trámite.</p>
+              </div><!-- panel-heading -->
+              <div class="panel-body">
+                <ul>
+                  <li>
+                    Formato de Acreditación de Perito Constructor (DRO)
+                  </li>
+                  <li>
+                    Copia de Título
+                  </li>
+                  <li>
+                    Copia de Cédula Profesional
+                  </li>
+                  <li>
+                    Curriculum
+                  </li>
+                  <li>
+                    Copia de Comprobante de Domicilio
+                  </li>
+                  <li>
+                    Copia de Pago de Colegio respectivo CICLAC o CACLAC
+                  </li>
+                  <li>
+                    Copia de la Credencial del Colegio
+                  </li>
+                  <li>
+                    Fotografía tamaño credencial blanco y negro (x2)
+                  </li>
+                  <li>
+                    Copia de Recibo de Pago (x2)
+                  </li>
+                  <li>
+                    Oficio del Colegio respectivo CICLAC o CACLAC
+                  </li>
+                </ul>
+              </div>
+            </div><!-- panel -->
+
+          </div><!-- col-md-6 -->
+
+        </div><!-- row -->
+
+      </div><!-- contentpanel -->
+    </div><!-- mainpanel -->
+  </section>
+
+  <script src="lib/jquery/jquery.js"></script>
+  <script src="lib/jquery-ui/jquery-ui.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.js"></script>
+  <script src="lib/jquery-toggles/toggles.js"></script>
+
+  <script src="js/quirk.js"></script>
+
+</body>
+
+</html>

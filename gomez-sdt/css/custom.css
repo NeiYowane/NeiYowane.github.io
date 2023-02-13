@@ -1,0 +1,70 @@
+section {
+    margin-top: 60px;
+}
+
+.headerpanel {
+    background-color: #222222;
+}
+
+.headerpanel .logopanel {
+    background-color: #222222;
+}
+
+.searchpanel .input-group .form-control {
+    background-color: #333333;
+}
+
+.nav-inverse {
+    background-color: #333333;
+}
+
+.nav-sidebar.nav-justified>li>a {
+    background-color: #505050b3;
+}
+
+.big-icon {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.bottom-button {
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-demo .btn {
+    margin: 0;
+}
+
+.bottom-label {
+    position: absolute;
+}
+
+.flex-navbar {
+    display: flex;
+}
+
+.headerpanel {
+    height: 120px;
+}
+
+.navbar-logo {
+    max-width: 100%;
+}
+
+.btn-default {
+    background-color: #333333;
+}
+
+.leftpanel {
+    margin-top: 56px;
+}
+
+.leftpanel-profile {
+    background-color: #333333;
+}
+
+.nav-quirk .children > li > a {
+    height: max-content;
+}

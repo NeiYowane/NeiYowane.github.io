@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="shortcut icon" href="images/favicon.png" type="image/png">-->
+
+  <title>Sistema de Digitalización de Trámites</title>
+  <link rel="icon" type="image/x-icon" href="media\logo\transparent-gp.ico">
+
+  <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="lib/select2/select2.css">
+
+  <link rel="stylesheet" href="css/quirk.css">
+
+  <script src="lib/modernizr/modernizr.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.js"></script>
+  <script src="lib/respond/respond.src.js"></script>
+  <![endif]-->
+</head>
+
+<body class="signwrapper">
+
+  <div class="sign-overlay"></div>
+  <div class="signpanel"></div>
+
+  <div class="signup">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="panel">
+          <div class="panel-heading">
+            <h1><h1><img height="100px" src="media\logo\logo-GP2225-removebg.png" alt=""/></h1></h1>
+            <h4 class="panel-title">Sistema de Digitalización de Trámites</h4>
+            <p>Porfavor proporciona los siguientes datos en orden para registrarte en el Sistema.</p>
+          </div>
+          <div class="panel-body">
+            <form action="index.html">
+              <div class="form-group mb15">
+                <input type="text" class="form-control" placeholder="Ingresa tu Correo Electronico">
+              </div>
+              <div class="form-group mb15">
+                <input type="text" class="form-control" placeholder="Ingresa una Contraseña">
+              </div>
+              <div class="form-group mb15">
+                <input type="text" class="form-control" placeholder="Ingresa tu Nombre Completo">
+              </div>
+
+              <div class="row mb15">
+                <div class="col-xs-5">
+                  <div class="form-group">
+                    <select class="form-control" style="width: 100%" data-placeholder="Mes">
+                      <option value="">&nbsp;</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <div class="form-group">
+                    <select class="form-control" style="width: 100%" data-placeholder="Día">
+                      <option value="">&nbsp;</option>
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="form-group">
+                    <select class="form-control" style="width: 100%" data-placeholder="Año">
+                      <option value="">&nbsp;</option>
+                      <option value="1986">1986</option>
+                      <option value="1987">1987</option>
+                      <option value="1988">1988</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group mb20">
+                <label class="ckbox">
+                  <input type="checkbox" name="checkbox">
+                  <span>Aceptar Terminos y Condiciones</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success btn-quirk btn-block">Registrar Cuenta</button>
+              </div>
+            </form>
+          </div><!-- panel-body -->
+        </div><!-- panel -->
+      </div><!-- col-sm-5 -->
+      <div class="col-sm-7">
+        <div class="sign-sidebar">
+          <h3 class="signtitle mb20">¿Porque crear una Cuenta en el SDT?</h3>
+          <p>En este Sistema encontrará la información referente a los trámites que podrá realizar en la Ventanilla Única, así como los requisitos que deberá cumplir para cada uno de ellos.</p>
+
+          <br>
+
+          <h4 class="reason">1. Trámite en Linea</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere, felis et sollicitudin aliquam, mi massa aliquam diam, et varius massa libero sed tellus. Aliquam quam augue, euismod eu nulla sit amet, interdum pulvinar dui. Morbi nec ex risus.</p>
+
+          <br>
+
+          <h4 class="reason">2. Datos Seguros y Privados</h4>
+          <p>Cras ut molestie nisl. Sed ac tincidunt neque. Sed sollicitudin magna quis feugiat feugiat. Pellentesque ultricies, neque et aliquet fringilla, sapien purus euismod eros, vel ornare lectus elit quis sem. Suspendisse vel quam risus.</p>
+
+          <hr class="invisible">
+
+          <div class="form-group">
+            <a href="signin.html" class="btn btn-default btn-quirk btn-stroke btn-stroke-thin btn-block btn-sign">¿Ya tienes una Cuenta? Inicia Sesión Aquí!</a>
+          </div>
+        </div><!-- sign-sidebar -->
+      </div>
+    </div>
+  </div><!-- signup -->
+
+
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/select2/select2.js"></script>
+
+<script>
+$(function() {
+
+  // Select2 Box
+  $("select.form-control").select2({ minimumResultsForSearch: Infinity });
+
+});
+</script>
+
+</body>
+</html>

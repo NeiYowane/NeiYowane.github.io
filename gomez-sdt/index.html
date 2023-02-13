@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="shortcut icon" href="images/favicon.png" type="image/png">-->
+
+  <title>Sistema de Digitalización de Trámites</title>
+  <link rel="icon" type="image/x-icon" href="media\logo\transparent-gp.ico">
+
+  <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="lib/weather-icons/css/weather-icons.css">
+  <link rel="stylesheet" href="lib/jquery-toggles/toggles-full.css">
+
+  <link rel="stylesheet" href="css/quirk.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <script src="lib/modernizr/modernizr.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.js"></script>
+  <script src="lib/respond/respond.src.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <header>
+    <div class="headerpanel">
+
+      <div class="logopanel">
+        <a href="index.html"><img class="navbar-logo" src="media\logo\logo-GP2225-removebg.png" alt="" /></a>
+        <h2></h2>
+      </div><!-- logopanel -->
+
+      <div class="headerbar">
+
+        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+
+        <div class="searchpanel">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar Trámite...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+            </span>
+          </div><!-- input-group -->
+          <span style="line-height: 50px;">Martes 7 de Febrero del 2023, 10:00am </span>
+        </div>
+
+        <div class="header-right">
+          <ul class="headermenu">
+            <li>
+              <div class="btn-group">
+                <a href="signup.html"><button type="button" class="btn btn-logged">Registrarse &nbsp; /</button></a>
+              </div>
+            </li>
+            <li>
+              <div class="btn-group">
+                <a href="signin.html"><button type="button" class="btn btn-logged">Iniciar Sesión</button></a>
+              </div>
+            </li>
+            <li>
+              <div class="btn-group">
+                <button type="button" class="btn btn-logged" data-toggle="dropdown">
+                  <img src="media\users\default.jpg" alt="" />
+                  Usuario
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a href="#"><i class="glyphicon glyphicon-user"></i> Mi Perfil</a></li>
+                  <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Ajustes</a></li>
+                  <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Ayuda</a></li>
+                  <li><a href="signin.html"><i class="glyphicon glyphicon-log-out"></i> Cerrar Sesión</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button id="chatview" class="btn btn-chat">
+                <span class="badge-alert"></span>
+                <a href="signin.html"><i class="fa fa-sign-out"></i></a>
+              </button>
+            </li>
+          </ul>
+        </div><!-- header-right -->
+      </div><!-- headerbar -->
+    </div><!-- header-->
+  </header>
+
+  <section>
+
+    <div class="leftpanel">
+      <div class="leftpanelinner">
+
+        <!-- ################## LEFT PANEL PROFILE ################## -->
+
+        <!-- <div class="media leftpanel-profile">
+          <div class="media-left">
+            <a href="#">
+              <img src="media\users\default.jpg" alt="" class="media-object img-circle">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Usuario <a data-toggle="collapse" data-target="#loguserinfo" class="pull-right"><i
+                  class="fa fa-angle-down"></i></a></h4>
+            <span>Tipo de Usuario</span>
+          </div>
+        </div> -->
+        <!-- leftpanel-profile -->
+
+        <div class="leftpanel-userinfo collapse" id="loguserinfo">
+          <h5 class="sidebar-title">Dirección</h5>
+          <address>
+            4975 Cambridge Road
+            Miami Gardens, FL 33056
+          </address>
+          <h5 class="sidebar-title">Contacto</h5>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <label class="pull-left">E-mail</label>
+              <span class="pull-right">me@themepixels.com</span>
+            </li>
+            <li class="list-group-item">
+              <label class="pull-left">Tél. Casa</label>
+              <span class="pull-right">(032) 1234 567</span>
+            </li>
+            <li class="list-group-item">
+              <label class="pull-left">Tél. Móvil</label>
+              <span class="pull-right">+63012 3456 789</span>
+            </li>
+            <li class="list-group-item">
+              <label class="pull-left">Redes Sociales</label>
+              <div class="social-icons pull-right">
+                <a href="#"><i class="fa fa-facebook-official"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div><!-- leftpanel-userinfo -->
+
+        <ul class="nav nav-tabs nav-justified nav-sidebar">
+          <li class="tooltips active" data-toggle="tooltip" title="Trámites"><a data-toggle="tab"
+              data-target="#mainmenu"><i class="tooltips fa fa-ellipsis-h"></i></a></li>
+          <li class="tooltips" data-toggle="tooltip" title="Ajustes"><a data-toggle="tab" data-target="#settings"><i
+                class="fa fa-cog"></i></a></li>
+          <li class="tooltips" data-toggle="tooltip" title="Cerrar Sesión"><a href="signin.html"><i
+                class="fa fa-sign-out"></i></a></li>
+        </ul>
+
+        <div class="tab-content">
+
+          <!-- ################# MAIN MENU ################### -->
+
+          <div class="tab-pane active" id="mainmenu">
+            <h5 class="sidebar-title">Trámites</h5>
+            <ul class="nav nav-pills nav-stacked nav-quirk">
+              <li class="nav-parent">
+                <a href=""><i class="fa fa-gears"></i> <span>Licencia de Funcionamiento (FUAE)</span></a>
+                <ul class="children">
+                  <li><a href="procedure-A-01.html">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                      Bajo Riesgo</a>
+                  </li>
+                  <li><a href="procedure-A-02.html">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                      Mediano Riesgo</a>
+                  </li>
+                  <li><a href="procedure-A-03.html">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                      Regulación
+                      Especial</a></li>
+                  <li><a href="procedure-A-04.html">Licencia de Funcionamiento para Apertura Bajo Riesgo</a></li>
+                  <li><a href="procedure-A-05.html">Licencia de Funcionamiento para Apertura Mediano Riesgo</a></li>
+                  <li><a href="procedure-A-06.html">Licencia de Funcionamiento para Apertura Regulación Especial</a>
+                  </li>
+                  <li><a href="procedure-A-07.html">Refrendo Anual de la Licencia de Funcionamiento de Empresas de Bajo
+                      Riesgo</a></li>
+                  <li><a href="procedure-A-08.html">Refrendo Anual de la Licencia de Funcionamiento de Empresas de
+                      Mediano Riesgo</a></li>
+                  <li><a href="procedure-A-09.html">Refrendo Anual de la Licencia de Funcionamiento de Empresas de
+                      Regulación Especial</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-building"></i> <span>Obras Públicas y Desarrollo Urbano
+                    (FUVU)</span></a>
+                <ul class="children">
+                  <li><a href="procedure-B-01.html">Constancia de Compatibilidad Urbanistica para Construcción
+                      Habitacional</a></li>
+                  <li><a href="procedure-B-02.html">Constancia de Compatibilidad Urbanistica para Construcción
+                      Comercial</a></li>
+                  <li><a href="procedure-B-03.html">Constancia de Compatibilidad Urbanistica para Construcción
+                      Industrial</a></li>
+                  <li><a href="procedure-B-04.html">Autorización de Subdivisión de Inmueble con Superficie de hasta
+                      10,000 Metros
+                      Cuadrados</a></li>
+                  <li><a href="procedure-B-05.html">Autorización de Fusión de Inmueble con Superficie de hasta 10,000
+                      Metros Cuadrados</a>
+                  </li>
+                  <li><a href="procedure-B-06.html">Autorización de Subdivisión de Inmueble con Superficie Mayor a
+                      10,000 Metros
+                      Cuadrados</a></li>
+                  <li><a href="procedure-B-07.html">Autorización de Fusión de Inmueble con Superficie Mayor a 10,000
+                      Metros Cuadrados</a>
+                  </li>
+                  <li><a href="procedure-B-08.html">Licencia para el Uso Temporal de la Vía y Espacios Públicos para
+                      Materiales,
+                      Instalaciones y Equipos de Construcción</a></li>
+                  <li><a href="procedure-B-09.html">Licencia de Demolición Menor a 40m2</a></li>
+                  <li><a href="procedure-B-10.html">Licencia de Demolición Mayor a 40 m2</a></li>
+                  <li><a href="procedure-B-11.html">Autorización de Relotificación</a></li>
+                  <li><a href="procedure-B-12.html">Autorización de Régimen de Propiedad en Condominio</a></li>
+                  <li><a href="procedure-B-13.html">Licencia para la Instalación de Anuncio Publicitario o de
+                      Identificación</a></li>
+                  <li><a href="procedure-B-14.html">Reglamento de Construcción</a></li>
+                  <li><a href="procedure-B-15.html">Autorización de Dictamen Estructural/a></li>
+                  <li><a href="procedure-B-16.html">Licencia de Construcción para Edificación o Ampliación de Vivienda
+                      por
+                      Autoconstrucción hasta por 40 m2</a></li>
+                  <li><a href="procedure-B-17.html">Licencia para la Construcción en Inmueble mayor de 40 metros
+                      cuadrados para vivienda
+                      autoconstrucción</a></li>
+                  <li><a href="procedure-B-18.html">Licencia para la Construcción en Inmueble mayor de 40 metros
+                      cuadrados para 2 o más
+                      viviendas</a></li>
+                  <li><a href="procedure-B-19.html">Licencia para la Construcción en Inmueble mayor de 40 metros
+                      cuadrados para uso
+                      comercial, industrial y servicios</a></li>
+                  <li><a href="procedure-B-20.html">Licencia para Introducción de Líneas Conductoras</a></li>
+                  <li><a href="procedure-B-21.html">Autorización de Cambio de Uso de Suelo</a></li>
+                  <li><a href="procedure-B-22.html">Constancia de Habitabilidad</a></li>
+                  <li><a href="procedure-B-23.html">Constancia de Terminación de Obra</a></li>
+                  <li><a href="procedure-B-24.html">Certificación de Cabildo</a></li>
+                  <li><a href="procedure-B-25.html">Constancia de Factibilidad de Servicios</a></li>
+                  <li><a href="procedure-B-26.html">Remodelación Menor de 40 m2</a></li>
+                  <li><a href="procedure-B-27.html">Remodelación Mayor de 40 m2</a></li>
+                  <li><a href="procedure-B-28.html">Deslindes</a></li>
+                  <li><a href="procedure-B-29.html">Plano General de la Ciudad</a></li>
+                  <li><a href="procedure-B-30.html">Carta Urbana</a></li>
+                  <li><a href="procedure-B-31.html">Autorización de Fraccionamiento</a></li>
+                  <li><a href="procedure-B-32.html">Licencia Anual de Fraccionamiento</a></li>
+                  <li><a href="procedure-B-33.html">Recepción de Fraccionamiento</a></li>
+                  <li><a href="procedure-B-34.html">Instalación de Antenas y Similares</a></li>
+                  <li><a href="procedure-B-35.html">Renovación de licencia de construccion para Edificación o Ampliación
+                      de Vivienda por
+                      Autoconstrucción hasta por 40 m2</a></li>
+                  <li><a href="procedure-B-36.html">Renovación de Licencia para la Construcción en Inmueble mayor de 40
+                      metros
+                      cuadrados.</a></li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-user"></i> <span>Perito Responsable de Obra
+                    (DRO)</span></a>
+                <ul class="children">
+                  <li><a href="procedure-C-01.html">Registro de Perito Responsable de Obra</a></li>
+                  <li><a href="procedure-C-02.html">Cuota Anual de Perito Responsable de Obra</a></li>
+                  <li><a href="procedure-C-03.html">Cambio de Perito Responsable de Obra</a></li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-shield"></i> <span>Protección Civil</span></a>
+                <ul class="children">
+                  <li><a href="procedure-D-01.html">Dictamen de Protección Civil</a></li>
+                </ul>
+              </li>
+              <li class="nav-parent"><a href=""><i class="fa fa-tree"></i> <span>Ecología Municipal</span></a>
+                <ul class="children">
+                  <li><a href="procedure-E-01.html">Dictamen de Ecología Municipal Bajo Riesgo</a></li>
+                  <li><a href="procedure-E-02.html">Dictamen de Ecología Municipal Mediano Riesgo</a></li>
+                  <li><a href="procedure-E-03.html">Dictamen de Ecología Municipal Regulación Especial</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- tab-pane -->
+
+          <!-- #################### SETTINGS ################### -->
+
+          <div class="tab-pane" id="settings">
+            <h5 class="sidebar-title">Ajustes Generales</h5>
+            <ul class="list-group list-group-settings">
+              <li class="list-group-item">
+                <h5>Ajuste I</h5>
+                <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean odio urna, maximus et luctus
+                  vitae, mattis pellentesque dui.</small>
+                <div class="toggle-wrapper">
+                  <div class="leftpanel-toggle toggle-light success"></div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <h5>Ajuste II</h5>
+                <small>In bibendum enim nec nulla hendrerit, sed efficitur odio vulputate. Nulla turpis turpis,
+                  hendrerit dapibus leo quis.</small>
+                <div class="toggle-wrapper">
+                  <div class="leftpanel-toggle-off toggle-light success"></div>
+                </div>
+              </li>
+            </ul>
+          </div><!-- tab-pane -->
+
+
+        </div><!-- tab-content -->
+
+      </div><!-- leftpanelinner -->
+    </div><!-- leftpanel -->
+
+    <div class="mainpanel">
+
+      <div class="contentpanel">
+
+        <ol class="breadcrumb breadcrumb-quirk">
+          <li><a href="index.html"><i class="fa fa-home mr5"></i> Inicio</a></li>
+          <!-- <li><a href="buttons.html">Pages</a></li> -->
+          <!-- <li class="active">Blank</li> -->
+        </ol>
+
+        <!-- content goes here... -->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">Bienvenid@</h4>
+              </div>
+              <div class="panel-body">
+                <p>En esta sección encontrará la información referente a los trámites que podrá realizar en la
+                  Ventanilla Única, así como los requisitos que deberá cumplir para cada uno de ellos.
+              </div>
+            </div><!-- panel -->
+          </div><!-- col-md-6 -->
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="nav nav-tabs nav-inverse nav-justified flex-navbar">
+              <li style="width: calc(100%/5);" class="active"><a href="#popular" data-toggle="tab"
+                  style="height: 100%;"><i class="fa fa-gears big-icon"></i><br>Licencia de Funcionamiento (FUAE)</a>
+              </li>
+              <li style="width: calc(100%/5);"><a href="#recent" data-toggle="tab" style="height: 100%;"><i
+                    class="fa fa-building big-icon"></i><br>Obras Públicas
+                  y Desarrollo Urbano (FUVU)</a></li>
+              <li style="width: calc(100%/5);"><a href="#comments" data-toggle="tab" style="height: 100%;"><i
+                    class="fa fa-user big-icon"></i><br>Perito
+                  Responsable de Obra (DRO)</a></li>
+              <li style="width: calc(100%/5);"><a href="#four" data-toggle="tab" style="height: 100%;"><i
+                    class="fa fa-shield big-icon"></i><br>Protección
+                  Civil</a></li>
+              <li style="width: calc(100%/5);"><a href="#five" data-toggle="tab" style="height: 100%;"><i
+                    class="fa fa-tree big-icon"></i><br>Ecología
+                  Municipal</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content mb20">
+              <div class="tab-pane active" id="popular">
+                <h5 class="panel-title mb5">Trámites Disponibles de Licencias de Funcionamiento</h5>
+                <p class="mb20">A continuación se muestran todos los trámites disponibles relacionados con la categoria
+                  seleccionada.</p>
+                <p>NOTA: Si un trámite puede realizarse directamente en línea, un mensaje indicando esto aparecera en la
+                  tarjeta enseguida del botón "Consultar".</p>
+                <hr class="darken">
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento de
+                          Bajo Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La constancia de compatibilidad urbanística es el documento que contiene el
+                          uso permitido, prohibido o condicionado para un predio en razón de su ubicación, de acuerdo al
+                          programa de desarrollo urbano que corresponda, y las declaratorias que de él se deriven.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-01.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                          Mediano Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La constancia de compatibilidad urbanística es el documento que contiene el
+                          uso permitido, prohibido o condicionado para un predio en razón de su ubicación, de acuerdo al
+                          programa de desarrollo urbano que corresponda, y las declaratorias que de él se deriven.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-02.html" class="btn btn-success btn-quirk">Consultar</a>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Compatibilidad Urbanistica Licencia de Funcionamiento
+                          Regulación Especial</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La constancia de compatibilidad urbanística es el documento que contiene el
+                          uso permitido, prohibido o condicionado para un predio en razón de su ubicación, de acuerdo al
+                          programa de desarrollo urbano que corresponda, y las declaratorias que de él se deriven.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-03.html" class="btn btn-success btn-quirk">Consultar</a>
+                          <!-- <span class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea Disponible</span> -->
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia de Funcionamiento para Apertura Bajo Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La licencia de funcionamiento municipal corresponde al principal trámite
+                          para abrir empresas de bajo riesgo. Este trámite puede ser tardado y engorroso. Sin embargo,
+                          hay municipios que cuentan con una Ventanilla Única que facilita y simplifica la obtención de
+                          esta licencia.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-04.html" class="btn btn-success btn-quirk">Consultar</a>
+                          <span class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia de Funcionamiento para Apertura Mediano Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La licencia de funcionamiento municipal corresponde al principal trámite
+                          para abrir empresas de bajo riesgo. Este trámite puede ser tardado y engorroso. Sin embargo,
+                          hay municipios que cuentan con una Ventanilla Única que facilita y simplifica la obtención de
+                          esta licencia.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-05.html" class="btn btn-success btn-quirk">Consultar</a>
+                          <!-- <span class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea Disponible</span> -->
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia de Funcionamiento para Apertura Regulación Especial</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La licencia de funcionamiento municipal corresponde al principal trámite
+                          para abrir empresas de bajo riesgo. Este trámite puede ser tardado y engorroso. Sin embargo,
+                          hay municipios que cuentan con una Ventanilla Única que facilita y simplifica la obtención de
+                          esta licencia.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-06.html" class="btn btn-success btn-quirk">Consultar</a>
+                          <!-- <span class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea Disponible</span> -->
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Refrendo Anual de la Licencia de Funcionamiento de Empresas de Bajo
+                          Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El refrendo anual de la Licencia de funcionamiento es un impuesto que debe
+                          pagarse cada año ya que a través de este documento, la autoridad municipal acredita a tu
+                          empresa para que esta pueda iniciar operaciones, por lo tanto, es el más importante.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-07.html" class="btn btn-success btn-quirk">Consultar</a>
+                          <!-- <span class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea Disponible</span> -->
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Refrendo Anual de la Licencia de Funcionamiento de Empresas de Mediano
+                          Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El refrendo anual de la Licencia de funcionamiento es un impuesto que debe
+                          pagarse cada año ya que a través de este documento, la autoridad municipal acredita a tu
+                          empresa para que esta pueda iniciar operaciones, por lo tanto, es el más importante.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-08.html" class="btn btn-success btn-quirk">Consultar</a>
+                          <!-- <span class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea Disponible</span> -->
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Refrendo Anual de la Licencia de Funcionamiento de Empresas de
+                          Regulación Especial</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El refrendo anual de la Licencia de funcionamiento es un impuesto que debe
+                          pagarse cada año ya que a través de este documento, la autoridad municipal acredita a tu
+                          empresa para que esta pueda iniciar operaciones, por lo tanto, es el más importante.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-A-09.html" class="btn btn-success btn-quirk">Consultar</a>
+                          <!-- <span class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea Disponible</span> -->
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div><!-- row -->
+              </div>
+
+              <div class="tab-pane" id="recent">
+                <h5 class="panel-title mb5">Trámites Disponibles de Obras Públicas y Desarrollo Urbano</h5>
+                <p class="mb20">A continuación se muestran todos los trámites disponibles relacionados con la categoria
+                  seleccionada.</p>
+                <p>NOTA: Si un trámite puede realizarse directamente en línea, un mensaje indicando esto aparecera en la
+                  tarjeta enseguida del botón "Consultar".</p>
+                <hr class="darken">
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Compatibilidad Urbanistica para Construcción Habitacional</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El documento que expide el Director donde se señalan los usos o destinos de áreas y predios permitidos, condicionados o prohibidos con base en la zonificación prevista en los planes, programas y declaratorias de desarrollo urbano.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-01.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Compatibilidad Urbanistica para Construcción Comercial</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El documento que expide el Director donde se señalan los usos o destinos de áreas y predios permitidos, condicionados o prohibidos con base en la zonificación prevista en los planes, programas y declaratorias de desarrollo urbano.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-02.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Compatibilidad Urbanistica para Construcción Industrial</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El documento que expide el Director donde se señalan los usos o destinos de áreas y predios permitidos, condicionados o prohibidos con base en la zonificación prevista en los planes, programas y declaratorias de desarrollo urbano.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-03.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  </div>
+                  <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Subdivisión de Inmueble con Superficie de hasta 10,000 Metros Cuadrados</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Constancia de Permiso de Subdivisión o Segregación de Predios. Es el documento que emite el H. Ayuntamiento de constancia de permiso de subdivisión o segregación de predios, a través de la Dirección de Obras Públicas como autorización, para cualquier tipo de división de terrenos en fracciones.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-04.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Fusión de Inmueble con Superficie de hasta 10,000 Metros Cuadrados</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Constancia de Permiso de Subdivisión o Segregación de Predios. Es el documento que emite el H. Ayuntamiento de constancia de permiso de subdivisión o segregación de predios, a través de la Dirección de Obras Públicas como autorización, para cualquier tipo de división de terrenos en fracciones.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-05.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Subdivisión de Inmueble con Superficie Mayor a 10,000 Metros Cuadrados</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Constancia de Permiso de Subdivisión o Segregación de Predios. Es el documento que emite el H. Ayuntamiento de constancia de permiso de subdivisión o segregación de predios, a través de la Dirección de Obras Públicas como autorización, para cualquier tipo de división de terrenos en fracciones.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-06.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Fusión de Inmueble con Superficie Mayor a 10,000 Metros Cuadrados</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La autorización de fusión consiste en el permiso que otorga la Autoridad para unir dos o más predios que estén contiguos a fin de que se conviertan en uno solo; la subdivisión, es el acto mediante el cual se divide un predio en dos o más lotes, en donde los lotes resultantes cumplen con las dimensiones mínimas.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-07.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia para el Uso Temporal de la Vía y Espacios Públicos para Materiales, Instalaciones y Equipos de Construcción</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Consiste en asignar un permiso o autorización temporal para hacer uso de un espacio público municipal (plazas, jardines, parques, instalaciones deportivas o explanadas), para eventos de comercialización y prestación de servicios de cualquier naturaleza.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-08.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia de Demolición Menor a 40m2</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Es el documento oficial que se debe obtener en la Alcaldía correspondiente ante la dirección de la Secretaría de Desarrollo Urbano y vivienda, para llevar a cabo la demolición parcial o total de un inmueble.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-09.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia de Demolición Mayor a 40 m2</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Es el documento oficial que se debe obtener en la Alcaldía correspondiente ante la dirección de la Secretaría de Desarrollo Urbano y vivienda, para llevar a cabo la demolición parcial o total de un inmueble.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-10.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Relotificación</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Este trámite procede cuando se hacen cambios en el trazo de vialidades, manzanas o lotes de un fraccionamiento autorizado con licencia vigente.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-11.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Régimen de Propiedad en Condominio</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Es el documento en el que se autoriza la partición o división de un predio en áreas privativas y áreas comunes.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-12.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia para la Instalación de Anuncio Publicitario o de Identificación</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Si deseas colocar anuncios, avisos o elementos publicitarios en la vía pública, debes solicitar una autorización a la municipalidad de tu distrito o provincia. La duración de este permiso varía en cada municipio.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-13.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Reglamento de Construcción</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Los reglamentos de construcción son documentos legales que tienen la función de proteger a la sociedad contra la falla o mal funcionamiento de las edificaciones.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-14.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Dictamen Estructural</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El dictamen estructural es una inspección ocular del inmueble en donde se analiza a detalle las condiciones de un inmueble en su interior y exterior para conocer la seguridad de las construcciones y evaluar sus condiciones estructurales.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-15.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia de Construcción para Edificación o Ampliación de Vivienda por Autoconstrucción hasta por 40 m2</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Licencia de Construcción para Edificación o Ampliación de Vivienda por Autoconstrucción es un permiso otorgado por las autoridades locales que permite a una persona construir o ampliar su propia vivienda sin contratar a un contratista o empresa constructora. Con esta licencia, se asegura que la construcción cumple con los requisitos y normativas de seguridad y construcción establecidos por las autoridades locales.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-16.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia para la Construcción en Inmueble mayor de 40 metros cuadrados para vivienda autoconstrucción</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Licencia para la Construcción en Inmueble es un permiso otorgado por las autoridades locales que permite llevar a cabo la construcción, renovación o ampliación de un edificio o estructura en un terreno o inmueble específico. La licencia se emite después de que se han cumplido ciertos requisitos y se han presentado los planos y documentos necesarios.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-17.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia para la Construcción en Inmueble mayor de 40 metros cuadrados para 2 o más viviendas</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Licencia para la Construcción en Inmueble es un permiso otorgado por las autoridades locales que permite llevar a cabo la construcción, renovación o ampliación de un edificio o estructura en un terreno o inmueble específico. La licencia se emite después de que se han cumplido ciertos requisitos y se han presentado los planos y documentos necesarios.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-18.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia para la Construcción en Inmueble mayor de 40 metros cuadrados para uso comercial, industrial y servicios</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Licencia para la Construcción en Inmueble es un permiso otorgado por las autoridades locales que permite llevar a cabo la construcción, renovación o ampliación de un edificio o estructura en un terreno o inmueble específico. La licencia se emite después de que se han cumplido ciertos requisitos y se han presentado los planos y documentos necesarios.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-19.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia para Introducción de Líneas Conductoras</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Licencia para Introducción de Líneas Conductoras es un permiso otorgado por las autoridades locales que permite a una empresa o proveedor de servicios públicos instalar y operar líneas conductoras en una zona determinada. Estas líneas conductoras pueden ser de energía eléctrica, telecomunicaciones, gas, agua, entre otros.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-20.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Cambio de Uso de Suelo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Autorización de Cambio de Uso de Suelo es un documento importante que regula y garantiza el cumplimiento de las normativas y regulaciones necesarias para cambiar el uso de una propiedad y asegura la seguridad, el medio ambiente y la planificación urbana en la zona./p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-21.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Habitabilidad</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Constancia de Habitabilidad es un documento importante que garantiza que un edificio cumple con los requisitos y normativas de habitabilidad y seguridad establecidos por las autoridades locales, y es necesario para poder utilizar un edificio como vivienda o para cualquier otro propósito relacionado con la vivienda.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-22.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Terminación de Obra</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Constancia de Terminación de Obra es un documento importante que garantiza que una obra de construcción ha sido completada de manera segura y adecuada, y cumple con los requisitos y normativas establecidos por las autoridades locales, lo cual es necesario para poder registrar una propiedad y obtener una Licencia de Habitabilidad.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-23.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Certificación de Cabildo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Una Certificación de Cabildo es un documento emitido por el Cabildo Municipal que certifíca la conformidad de una construcción con las normativas y requisitos establecidos por las autoridades locales.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-24.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Constancia de Factibilidad de Servicios</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Constancia de Factibilidad de Servicios es un documento emitido por las autoridades locales o por las compañías prestadoras de servicios públicos (agua, luz, gas, etc.) que certifica que una propiedad tiene acceso a los servicios públicos necesarios para ser habitada.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-25.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Remodelación Menor de 40 m2</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El trámite de Remodelación Menor es un proceso importante que garantiza que los cambios realizados en una propiedad cumplan con las normativas y requisitos establecidos por las autoridades locales, y es necesario en la mayoría de los casos para obtener una Licencia de Habitabilidad.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedur-B-26.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Remodelación Mayor de 40 m2</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El trámite de Remodelación Menor es un proceso importante que garantiza que los cambios realizados en una propiedad cumplan con las normativas y requisitos establecidos por las autoridades locales, y es necesario en la mayoría de los casos para obtener una Licencia de Habitabilidad.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-27.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Deslindes</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El trámite de Deslindes es un proceso importante que permite definir y delimitar los límites de una propiedad, prevenir conflictos con los vecinos o con otras propiedades, y es necesario en algunos casos para obtener una Licencia de Construcción.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-28.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Plano General de la Ciudad</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El trámite de un Plano General de la Ciudad es importante porque permite a las autoridades locales planificar y regular el crecimiento urbano de una ciudad de manera ordenada y sostenible, y es un documento que es referido por otras normativas y regulaciones urbanísticas.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-29.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Carta Urbana</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Una Carta Urbana es un documento que define la estructura y organización territorial de una ciudad o región. Este documento establece los usos permitidos del suelo, las áreas destinadas a vivienda, comercio, servicios, parques, etc., y establece directrices para el desarrollo urbano futuro.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-30.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Autorización de Fraccionamiento</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Autorización de Fraccionamiento es un permiso emitido por las autoridades locales que permite la subdivisión de un terreno en varios lotes destinados a la construcción de viviendas u otros usos.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-31.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Licencia Anual de Fraccionamiento</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Este trámite es importante porque permite a los propietarios de fraccionamientos operar y mantener sus desarrollos de manera segura y adecuada, y porque proporciona una oportunidad para que las autoridades locales monitoreen y regulen la calidad y seguridad en los fraccionamientos.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-32.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Recepción de Fraccionamiento</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La Recepción de Fraccionamiento es un trámite importante que asegura que los fraccionamientos cumplan con los estándares y regulaciones apropiados antes de ser entregados a los propietarios, y que permite a las autoridades locales monitorear y regulaciones la calidad y seguridad en los fraccionamientos.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-33.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Instalación de Antenas y Similares</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">El trámite de Instalación de Antenas y Similares es un proceso administrativo que se realiza con las autoridades locales para obtener la autorización y permiso necesario para instalar antenas y otros equipos similares en una propiedad.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-34.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Renovación de licencia de construccion para Edificación ó Ampliación de Vivienda por Autoconstrucción hasta por 40 m2</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La renovación de la Licencia de Construcción para Edificación o Ampliación de Vivienda por Autoconstrucción es un proceso que se lleva a cabo para actualizar la autorización y permiso original para continuar con la construcción o ampliación de una vivienda.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-35.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Renovación de Licencia para la Construcción en Inmueble mayor de 40 metros cuadrados.</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">La renovación de la Licencia de Construcción para Edificación o Ampliación de Vivienda por Autoconstrucción es un proceso que se lleva a cabo para actualizar la autorización y permiso original para continuar con la construcción o ampliación de una vivienda.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-B-36.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+
+              </div>
+              <div class="tab-pane" id="comments">
+                <h5 class="panel-title mb5">Trámites Disponibles de Perito Responsable de Obra</h5>
+                <p class="mb20">A continuación se muestran todos los trámites disponibles relacionados con la categoria
+                  seleccionada.</p>
+                <p>NOTA: Si un trámite puede realizarse directamente en línea, un mensaje indicando esto aparecera en la
+                  tarjeta enseguida del botón "Consultar".</p>
+                <hr class="darken">
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Registro de Perito Responsable de Obra</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Los Peritos Responsables de Obras, son los profesionales de la Ingeniería Civil, de la Arquitectura o Ingenieros cuyos títulos indique una especialidad vinculada a la construcción, auxiliares de la Dirección de Comunicaciones y Obras Públicas, para vigilar el cumplimiento de las disposiciones de construcción.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-C-01.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Registro de Perito Responsable de Obra</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Los Peritos Responsables de Obras, son los profesionales de la Ingeniería Civil, de la Arquitectura o Ingenieros cuyos títulos indique una especialidad vinculada a la construcción, auxiliares de la Dirección de Comunicaciones y Obras Públicas, para vigilar el cumplimiento de las disposiciones de construcción.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-C-02.html" class="btn btn-success btn-quirk">Consultar</a><span
+                            class="bottom-label"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Trámite en Línea
+                            Disponible</span>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Cambio de Perito Responsable de Obra</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Los Peritos Responsables de Obras, son los profesionales de la Ingeniería Civil, de la Arquitectura o Ingenieros cuyos títulos indique una especialidad vinculada a la construcción, auxiliares de la Dirección de Comunicaciones y Obras Públicas, para vigilar el cumplimiento de las disposiciones de construcción.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-C-03.html" class="btn btn-success btn-quirk">Consultar</a>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+              </div>
+              <div class="tab-pane" id="four">
+                <h5 class="panel-title mb5">Trámites Disponibles de Protección Civil</h5>
+                <p class="mb20">A continuación se muestran todos los trámites disponibles relacionados con la categoria
+                  seleccionada.</p>
+                <p>NOTA: Si un trámite puede realizarse directamente en línea, un mensaje indicando esto aparecera en la
+                  tarjeta enseguida del botón "Consultar".</p>
+                <hr class="darken">
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Dictamen de Protección Civil</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Documento que aprueba las medidas de seguridad en materia de Protección Civil, en construcciones nuevas de edificaciones comerciales, industriales o de servicios, siempre y cuando cumpla con las "LEYES", "NORMAS" y "OTROS REGLAMENTOS" aplicables.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-D-01.html" class="btn btn-success btn-quirk">Consultar</a>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+              </div>
+              <div class="tab-pane" id="five">
+                <h5 class="panel-title mb5">Trámites Disponibles de Ecología Municipal</h5>
+                <p class="mb20">A continuación se muestran todos los trámites disponibles relacionados con la categoria
+                  seleccionada.</p>
+                <p>NOTA: Si un trámite puede realizarse directamente en línea, un mensaje indicando esto aparecera en la
+                  tarjeta enseguida del botón "Consultar".</p>
+                <hr class="darken">
+                <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Dictamen de Ecología Municipal Bajo Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Es un documento que se expide para el solicitante para mostrarle el impacto ambiental que puede generar en dicha área donde se encuentra el recurso ambiental.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-E-01.html" class="btn btn-success btn-quirk">Consultar</a>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Dictamen de Ecología Municipal Mediano Riesgo</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Es un documento que se expide para el solicitante para mostrarle el impacto ambiental que puede generar en dicha área donde se encuentra el recurso ambiental.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-E-02.html" class="btn btn-success btn-quirk">Consultar</a>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-inverse-full">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Dictamen de Ecología Municipal Regulación Especial</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p class="nomargin">Es un documento que se expide para el solicitante para mostrarle el impacto ambiental que puede generar en dicha área donde se encuentra el recurso ambiental.</p>
+                        <div class="btn-demo bottom-button">
+                          <a href="procedure-E-03.html" class="btn btn-success btn-quirk">Consultar</a>
+                        </div>
+                      </div>
+                    </div><!-- panel -->
+                  </div><!-- col-sm-6 -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- contentpanel -->
+    </div><!-- mainpanel -->
+  </section>
+
+  <script src="lib/jquery/jquery.js"></script>
+  <script src="lib/jquery-ui/jquery-ui.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.js"></script>
+  <script src="lib/jquery-toggles/toggles.js"></script>
+  <script src="js/quirk.js"></script>
+
+</body>
+
+</html>
