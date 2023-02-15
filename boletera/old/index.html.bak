@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- JQuery JS Core -->
+  <script src="js/jquery-3.6.0.js"></script>
+
+  <!-- Bootstrap JS Core -->
+  <script src="vendors/bootstrap-5.2.0-beta1/js/bootstrap.min.js"></script>
+
+  <!-- Splide JS Core -->
+  <script src="vendors/splide-4.0.7/js/splide.min.js" type="text/javascript"></script>
+
+  <!-- Bootstrap CSS Core -->
+  <link href="vendors/bootstrap-5.2.0-beta1/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome CSS Core -->
+  <link href="vendors/fontawesome-6.1.1/css/all.min.css" rel="stylesheet"/>
+
+  <!-- SPlide Theme CSS Core -->
+  <link href="vendors/splide-4.0.7/css/themes/splide-default.min.css" rel="stylesheet"/>
+
+  <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .splide {
+        margin: 0 auto;
+      }
+
+      .thumbnails {
+        display: flex;
+        margin: 1rem auto 0;
+        padding: 0;
+        justify-content: center;
+      }
+
+      .thumbnail {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        list-style: none;
+        margin: 0 0.2rem;
+        cursor: pointer;
+        opacity: 0.3;
+      }
+
+      .thumbnail.is-active {
+        opacity: 1;
+      }
+
+      .thumbnail img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="styles/offcanvas.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">RESO Boletera</a>
+    <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Puntos de Venta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Control</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Acerca de</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-secondary" type="submit"><i class="far fa-user-circle"></i>&nbsp;&nbsp;Ingresa</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  <main>
+
+    <!-- Splide -->
+    <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img
+              src="https://source.unsplash.com/random/1370x560?sig=1"
+              alt=""
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              src="https://source.unsplash.com/random/1370x560?sig=2"
+              alt=""
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              src="https://source.unsplash.com/random/1370x560?sig=3"
+              alt=""
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              src="https://source.unsplash.com/random/1370x560?sig=4"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- / Splide -->
+
+    <div class="nav-scroller bg-body shadow-sm">
+      <nav class="nav justify-content-md-center" aria-label="Secondary navigation">
+        <a class="nav-link active" aria-current="page" href="#">Eventos</a>
+        <a class="nav-link" href="#">Calendario</a>
+        <a class="nav-link" href="#">Artistas</a>
+        <a class="nav-link" href="#">Grupos</a>
+        <a class="nav-link" href="#">Filtro VI</a>
+        <a class="nav-link" href="#">Filtro VII</a>
+      </nav>
+    </div>
+
+    <div class="container">
+
+      <!-- Search Bar -->
+      <section class="pb-4 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Eventos</h1>
+            <p class="lead text-muted">Visualiza los proximos eventos programados.</p>
+            <div class="col-lg-12 input-group" style="width:auto;">
+              <div class="form-outline" style="width:90%;">
+                <input type="search" id="form1" class="form-control" placeholder="Busca por Nombre, Artista ó Lugar..." style="border-radius:0% 0% 0% 0%"></input>
+              </div>
+              <div class="form-outline" style="width:10%;">
+                <button type="button" class="btn btn-primary" style="border-radius:0% 50% 50% 0%; margin-left: -10px">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- / Search Bar -->
+
+      <!-- Card Album -->
+      <div class="album pb-4">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=1" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento I</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=2" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento II</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=3" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento III</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=4" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento IV</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=5" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento V</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=6" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento VI</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=7" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento VII</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="card-img-top" width="240" height="240" src="https://source.unsplash.com/random/560x560?sig=8" alt="Thumbnail">
+                <div class="card-body">
+                  <h5 class="card-title">Titulo del Evento VIII</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <div class="card-body">
+                  <h5 class="card-title">Plantilla para Evento</h5>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;[Fecha del Evento]<br></small>
+                  <small class="text-muted"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;[Ubicacion del Evento]<br></small>
+                  <small class="text-muted"><i class="far fa-building"></i>&nbsp;&nbsp;[Ciudad del Evento]<br></small>
+                  <small class="text-muted"><i class="fas fa-tags"></i>&nbsp;&nbsp;[Categoria del Evento]<br></small>
+                  <br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver Boletos</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / Card Album -->
+
+      <!-- / Footer -->
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Politica de Compra</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Aviso de Privacidad</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Preguntas Frecuentes</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Control</a></li>
+        </ul>
+        <p class="text-center text-muted">&copy; 2022 RESO Sistemas. Todos los derechos reservados.</p>
+      </footer>
+      <!-- / Footer -->
+
+    </div>
+  </main>
+
+  <script src="vendors/bootstrap-5.2.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+  <script src="scripts/offcanvas.js"></script>
+
+  <script>
+
+    // SPlide JS Script
+    var splide = new Splide("#main-slider", {
+      width: screen.width,
+      heightRatio : 0.4,
+      pagination: true,
+      cover: true,
+      autoplay: true,
+      resetProgress: true,
+      rewind: true
+    });
+    splide.mount();
+
+  </script>
+
+</body>
+</html>

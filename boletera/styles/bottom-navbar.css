@@ -1,0 +1,18 @@
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+@media screen and (min-width: 600px) {
+  #mobile-nav {
+  display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #events-nav {
+  display: none;
+  }
+}
